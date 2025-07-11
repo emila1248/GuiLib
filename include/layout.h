@@ -5,8 +5,6 @@
 #include <vector>
 #include <memory>
 
-//===== Base class that all "Layout" elements inherit from =====//
-
 class Layout : public Element
 {
 private:
