@@ -14,6 +14,7 @@ public:
     BoundingBox() = default;
     BoundingBox(int x, int y, int width, int height)
         : x(x), y(y), width(width), height(height) {}
+
 // Getters
     int x() const { return x; }
     int y() const { return y; }
@@ -21,8 +22,12 @@ public:
     int height() const { return height; }
     
 // Setters
-    void moveTo(int x, int y) { this->x = x; this->y = y; }     // Move box to (x, y)
-    void moveBy(int x, int y) { this->x += x; this->y += y; }   // Move box by (x, y) pixels
+    void moveTo(int x, int y) { this->x = x; this->y = y; }     // Move to (x, y)
+    void moveXTo(int x) { this->x = x; }
+    void moveYTo(int y) { this->y = y; }
+    void moveBy(int x, int y) { this->x += x; this->y += y; }   // Move by (x, y) pixels
+    void moveXBy(int x) { this->x += x; }
+    void moveYBy(int y) { this->y += y; }
 
     void expandUp(int px) { y -= px; height += px; }
     void expandRight(int px) { width += px; }

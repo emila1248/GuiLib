@@ -3,5 +3,6 @@
 
 class ButtonStyle
 {
-
+private:
+    Color background;
 };
