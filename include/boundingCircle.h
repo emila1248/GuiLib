@@ -1,6 +1,7 @@
 #pragma once
+#include "boundingArea.h"
 
-class BoundingCircle
+class BoundingCircle : public BoundingArea
 {
 private:
     int x = 0;
@@ -30,7 +31,7 @@ public:
     void growBy(float px) { radius += px; }
 
 // Other functions    
-    bool isInside(int x, int y) const {
+    bool isInside(int x, int y) const override {
         return (x - this->x)*(x - this->x) + (y - this->y)*(y - this->y) < radius*radius;
     }
 };
