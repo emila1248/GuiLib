@@ -1,8 +1,7 @@
 #pragma once
-#include "boundingArea.h"
 #include "raylib.h"
 
-class BoundingBox : public BoundingArea
+class BoundingBox
 {
 private:
     int x = 0;
@@ -37,7 +36,7 @@ public:
     void expandFromCenter(int x, int y) { this->x -= x/2; this->width += x; this->y -= y/2; this->height += y; }
 
 // Other functions
-    bool isInside(int x, int y) const override {
+    bool isInside(int x, int y) {
         return x >= this->x && x <= this->x + width && y >= this->y && y <= this->y + height;
     }
     Rectangle toRect() const { return { (float)x, (float)y, (float)width, (float)height }; }
